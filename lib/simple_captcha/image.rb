@@ -78,7 +78,7 @@ module SimpleCaptcha #:nodoc
         dst = Tempfile.new(RUBY_VERSION < '1.9' ? 'simple_captcha.png' : ['simple_captcha', '.png'], SimpleCaptcha.tmp_path)
         dst.binmode
         text.split(//).each_with_index do |letter, index|
-          i = -60 + (index*25) + rand(-6..6)
+          i = -40 + (index*25) + rand(-6..6)
           params << "-draw \"translate #{i},#{rand(-6..6)} skewX #{rand(-15..15)} gravity center text 0,0 '#{letter}'\" "
         end
 
